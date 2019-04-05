@@ -137,6 +137,10 @@ module Danger
     def target_files
       @target_files ||= (git.modified_files - git.deleted_files) + git.added_files
     end
+    
+    def skip_gradle_task
+      @skip_gradle_task ||= false
+    end
 
     # Run gradle task
     # @return [void]
